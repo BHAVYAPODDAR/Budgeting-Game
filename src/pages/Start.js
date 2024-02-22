@@ -1,0 +1,19 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Start = () => {
+  return (
+    <div className="h-screen w-screen flex justify-center items-center text-white">
+      <Link to="/story">
+        <button
+          type="button"
+          class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+        >
+          Start
+        </button>
+      </Link>
+    </div>
+  );
+};
+
+export default Start;
