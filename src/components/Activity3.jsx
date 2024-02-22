@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import budget from "../images/economist_3.png";
 
 const Activity3 = ({ onPrevious }) => {
   // Constants for fixed expenses
   const PHONE_BILL = 30;
-  const GUITAR_PRICE = 150;
+  const GUITAR_PRICE = 120;
   const STARBUCKS_DRINK_PRICE = 6;
   const DINE_OUT = 25;
   const FRIENDS = 15;
@@ -259,7 +260,7 @@ const Activity3 = ({ onPrevious }) => {
             </div>
             <div
               className={`mb-6 p-4 rounded-md ${
-                totalExpenses > 250
+                totalExpenses > 280
                   ? "bg-red-600 text-white"
                   : "bg-green-600 text-white"
               }`}
@@ -275,12 +276,14 @@ const Activity3 = ({ onPrevious }) => {
               >
                 Previous
               </button>
-              <button
-                type="button"
-                className="bg-gray-500 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-600 focus:outline-none focus:shadow-outline"
-              >
-                Home
-              </button>
+              <Link to="/">
+                <button
+                  type="button"
+                  className="bg-gray-500 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-600 focus:outline-none focus:shadow-outline"
+                >
+                  Home
+                </button>
+              </Link>
             </div>
           </div>
         </div>
