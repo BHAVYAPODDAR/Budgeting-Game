@@ -1,7 +1,44 @@
-// import React from "react";
+// import React, { useState, useEffect } from "react";
 // import ExpenseItem from "./ExpenseItem";
 
 // const Activity1 = ({ onNext }) => {
+//   const [answers, setAnswers] = useState({
+//     "Part-Time Job": null,
+//     Allowance: null,
+//     "Eating out": null,
+//     "Buying Starbucks": null,
+//     "Going out with friends": null,
+//     "College supply": null,
+//   });
+
+//   const correctAnswers = {
+//     "Part-Time Job": "Income",
+//     Allowance: "Income",
+//     "Eating out": "Expenses",
+//     "Buying Starbucks": "Expenses",
+//     "Going out with friends": "Expenses",
+//     "College supply": "Expenses",
+//   };
+
+//   const handleSelectAnswer = (title, value) => {
+//     setAnswers((prevAnswers) => ({
+//       ...prevAnswers,
+//       [title]: value,
+//     }));
+//   };
+
+//   useEffect(() => {
+//     // Check if all answers are correct
+//     const allCorrect = Object.keys(answers).every(
+//       (title) => answers[title] === correctAnswers[title]
+//     );
+//     // Enable or disable the "Next" button based on allCorrect
+//     const nextButton = document.getElementById("nextButton");
+//     if (nextButton) {
+//       nextButton.disabled = !allCorrect;
+//     }
+//   }, [answers, correctAnswers]);
+
 //   return (
 //     <div className="bg-white shadow-md rounded-md p-4 mb-8">
 //       <h2 className="text-3xl font-bold mb-4">Step 1: Income and Expenses</h2>
@@ -12,32 +49,34 @@
 //             How much do you <i>make</i> and how much do you <i>spend</i>?
 //           </h4>
 //           <p>
-//             Before starting your budgeting journey, it is essential to know you
+//             Before starting your budgeting journey, it is essential to know your
 //             income and expenses.
 //           </p>
 //           <p>
-//             <b>Income: </b> Think of all the means that you get money <br />
-//             <b>Expenses:</b>
-//             Think of all the ways you spend the money you got from your incomes
+//             <b>Income: </b> Think of all the means by which you get money <br />
+//             <b>Expenses:</b> Think of all the ways you spend the money you got
+//             from your incomes
 //           </p>
 //           <p>
-//             Help Kate identify which of her situation is an income or an
-//             expense:
+//             Help Kate identify which of her situations is income or an expense:
 //           </p>
-//           {/* <img src= alt="animated character" /> */}
 //         </div>
 //         <div className="grid grid-cols-2 gap-5 mt-5">
-//           <ExpenseItem title="Part-Time Job" />
-//           <ExpenseItem title="Allowance" />
-//           <ExpenseItem title="Eating out" />
-//           <ExpenseItem title="Buying Starbucks" />
-//           <ExpenseItem title="Going out with friends" />
-//           <ExpenseItem title="College supply" />
+//           {Object.keys(answers).map((title) => (
+//             <ExpenseItem
+//               key={title}
+//               title={title}
+//               correctAnswer={correctAnswers[title]}
+//               onSelectAnswer={handleSelectAnswer}
+//             />
+//           ))}
 //         </div>
 //         <div className="mt-4">
 //           <button
+//             id="nextButton"
 //             onClick={onNext}
 //             className="bg-green-500 text-white py-2 px-4 rounded-md"
+//             disabled={true}
 //           >
 //             Next
 //           </button>
@@ -49,7 +88,7 @@
 
 // export default Activity1;
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ExpenseItem from "./ExpenseItem";
 
 const Activity1 = ({ onNext }) => {
@@ -62,28 +101,16 @@ const Activity1 = ({ onNext }) => {
     "College supply": null,
   });
 
-  const handleCheckAnswer = () => {
-    const correctAnswers = {
-      "Part-Time Job": "Income",
-      Allowance: "Income",
-      "Eating out": "Expenses",
-      "Buying Starbucks": "Expenses",
-      "Going out with friends": "Expenses",
-      "College supply": "Expenses",
-    };
-
-    const updatedAnswers = {};
-    for (const expense in answers) {
-      const selectedAnswer = answers[expense];
-      const correctAnswer = correctAnswers[expense];
-      updatedAnswers[expense] =
-        selectedAnswer === correctAnswer ? "Correct" : "Wrong";
-      console.log(
-        `${expense} - Selected: ${selectedAnswer}, Correct: ${correctAnswer}, Result: ${updatedAnswers[expense]}`
-      );
-    }
-    setAnswers(updatedAnswers);
+  const correctAnswers = {
+    "Part-Time Job": "Income",
+    Allowance: "Income",
+    "Eating out": "Expenses",
+    "Buying Starbucks": "Expenses",
+    "Going out with friends": "Expenses",
+    "College supply": "Expenses",
   };
+
+  const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
 
   const handleSelectAnswer = (title, value) => {
     setAnswers((prevAnswers) => ({
@@ -91,6 +118,15 @@ const Activity1 = ({ onNext }) => {
       [title]: value,
     }));
   };
+
+  useEffect(() => {
+    // Check if all answers are correct
+    const allCorrect = Object.keys(answers).every(
+      (title) => answers[title] === correctAnswers[title]
+    );
+    // Set the state to enable or disable the "Next" button based on allCorrect
+    setIsNextButtonEnabled(allCorrect);
+  }, [answers, correctAnswers]);
 
   return (
     <div className="bg-white shadow-md rounded-md p-4 mb-8">
@@ -102,59 +138,38 @@ const Activity1 = ({ onNext }) => {
             How much do you <i>make</i> and how much do you <i>spend</i>?
           </h4>
           <p>
-            Before starting your budgeting journey, it is essential to know you
+            Before starting your budgeting journey, it is essential to know your
             income and expenses.
           </p>
           <p>
-            <b>Income: </b> Think of all the means that you get money <br />
-            <b>Expenses:</b>
-            Think of all the ways you spend the money you got from your incomes
+            <b>Income: </b> Think of all the means by which you get money <br />
+            <b>Expenses:</b> Think of all the ways you spend the money you got
+            from your incomes
           </p>
           <p>
-            Help Kate identify which of her situation is an income or an
-            expense:
+            Help Kate identify which of her situations is income or an expense:
           </p>
         </div>
         <div className="grid grid-cols-2 gap-5 mt-5">
-          <ExpenseItem
-            title="Part-Time Job"
-            onSelectAnswer={handleSelectAnswer}
-          />
-          <ExpenseItem title="Allowance" onSelectAnswer={handleSelectAnswer} />
-          <ExpenseItem title="Eating out" onSelectAnswer={handleSelectAnswer} />
-          <ExpenseItem
-            title="Buying Starbucks"
-            onSelectAnswer={handleSelectAnswer}
-          />
-          <ExpenseItem
-            title="Going out with friends"
-            onSelectAnswer={handleSelectAnswer}
-          />
-          <ExpenseItem
-            title="College supply"
-            onSelectAnswer={handleSelectAnswer}
-          />
+          {Object.keys(answers).map((title) => (
+            <ExpenseItem
+              key={title}
+              title={title}
+              correctAnswer={correctAnswers[title]}
+              onSelectAnswer={handleSelectAnswer}
+            />
+          ))}
         </div>
         <div className="mt-4">
           <button
-            onClick={handleCheckAnswer}
-            className="bg-blue-500 text-white py-2 px-4 rounded-md mr-2"
-          >
-            Check Answer
-          </button>
-          <button
             onClick={onNext}
-            className="bg-green-500 text-white py-2 px-4 rounded-md"
+            className={`bg-green-500 text-white py-2 px-4 rounded-md ${
+              isNextButtonEnabled ? "" : "opacity-50 cursor-not-allowed"
+            }`}
+            disabled={!isNextButtonEnabled}
           >
             Next
           </button>
-        </div>
-        <div className="mt-4">
-          {Object.entries(answers).map(([expense, result]) => (
-            <p key={expense}>
-              {expense}: {result}
-            </p>
-          ))}
         </div>
       </div>
     </div>

@@ -242,7 +242,7 @@ const Activity3 = ({ onPrevious }) => {
               </h5>
             </div>
             <div
-              className={`mb-6 ${
+              className={`mb-6 p-4 rounded-md ${
                 totalExpenses > 250
                   ? "bg-red-600 text-white"
                   : "bg-green-600 text-white"
