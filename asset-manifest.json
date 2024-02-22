@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Budgeting-Game/static/css/main.fa01ad27.css",
-    "main.js": "/Budgeting-Game/static/js/main.f767dfd5.js",
+    "main.css": "/Budgeting-Game/static/css/main.66cab6b0.css",
+    "main.js": "/Budgeting-Game/static/js/main.36e3f540.js",
     "static/media/calculatorImage.gif": "/Budgeting-Game/static/media/calculatorImage.124b9c97794075841238.gif",
     "static/media/chaiImage.gif": "/Budgeting-Game/static/media/chaiImage.cf786d4910e81a27911d.gif",
     "static/media/collegeImage.gif": "/Budgeting-Game/static/media/collegeImage.14c45e4d8d24bd2f9b5c.gif",
+    "static/media/economist_3.png": "/Budgeting-Game/static/media/economist_3.28263ed66664ca747cae.png",
     "static/media/libraryImage.gif": "/Budgeting-Game/static/media/libraryImage.a71a564ae2bc848226b2.gif",
     "static/media/musicImage.gif": "/Budgeting-Game/static/media/musicImage.c918c635461ed00e5dcb.gif",
     "index.html": "/Budgeting-Game/index.html",
-    "main.fa01ad27.css.map": "/Budgeting-Game/static/css/main.fa01ad27.css.map",
-    "main.f767dfd5.js.map": "/Budgeting-Game/static/js/main.f767dfd5.js.map"
+    "main.66cab6b0.css.map": "/Budgeting-Game/static/css/main.66cab6b0.css.map",
+    "main.36e3f540.js.map": "/Budgeting-Game/static/js/main.36e3f540.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa01ad27.css",
-    "static/js/main.f767dfd5.js"
+    "static/css/main.66cab6b0.css",
+    "static/js/main.36e3f540.js"
   ]
 }
