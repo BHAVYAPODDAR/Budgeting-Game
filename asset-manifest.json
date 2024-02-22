@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Budgeting-Game/static/css/main.fa01ad27.css",
+    "main.js": "/Budgeting-Game/static/js/main.7f62c03e.js",
+    "static/media/calculatorImage.gif": "/Budgeting-Game/static/media/calculatorImage.124b9c97794075841238.gif",
+    "static/media/chaiImage.gif": "/Budgeting-Game/static/media/chaiImage.cf786d4910e81a27911d.gif",
+    "static/media/collegeImage.gif": "/Budgeting-Game/static/media/collegeImage.14c45e4d8d24bd2f9b5c.gif",
+    "static/media/libraryImage.gif": "/Budgeting-Game/static/media/libraryImage.a71a564ae2bc848226b2.gif",
+    "static/media/musicImage.gif": "/Budgeting-Game/static/media/musicImage.c918c635461ed00e5dcb.gif",
+    "index.html": "/Budgeting-Game/index.html",
+    "main.fa01ad27.css.map": "/Budgeting-Game/static/css/main.fa01ad27.css.map",
+    "main.7f62c03e.js.map": "/Budgeting-Game/static/js/main.7f62c03e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa01ad27.css",
+    "static/js/main.7f62c03e.js"
+  ]
+}
