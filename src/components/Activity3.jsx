@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import budget from "../images/economist_3.png";
 
 const Activity3 = ({ onPrevious }) => {
   // Constants for fixed expenses
@@ -55,17 +56,11 @@ const Activity3 = ({ onPrevious }) => {
 
   return (
     <div className="container mx-auto p-8">
+      <h2 className="text-3xl font-bold text-center mb-4">Let's Budget!</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-gray-100 p-8 rounded-md">
-          <h2 className="text-3xl font-bold text-center mb-4">Let's Budget!</h2>
           <div className="mb-6">
-            <img
-              src="../assets/Calculator-pana.png"
-              alt="animated character"
-              className="mx-auto"
-              width="250"
-              height="250"
-            />
+            <img src={budget} alt="animated character" className="h-full" />
           </div>
           <p className="text-center">
             A budget is a comparison of income and expenses. It's an organized
@@ -73,61 +68,65 @@ const Activity3 = ({ onPrevious }) => {
           </p>
         </div>
 
-        <div className="bg-black text-white p-8 rounded-md">
+        <div className="bg-gray-800 text-white p-8 rounded-md">
           <h2 className="text-3xl font-bold text-center mb-4">
             Kate's Finance
           </h2>
-          <p className="text-center">
-            Total Income: <span className="text-green-500">$400</span>
-          </p>
-          <p className="text-center text-yellow-400">
-            Price of Guitar Kate Wants: $150
-          </p>
-          <div
-            className="text-center mt-4 
-          "
-          >
-            <p className="font-bold">Current Monthly Expenses:</p>
-            <p className="mb-2">
-              Starbucks Drinks:{" "}
-              <span className="text-red-600">$96 ($6 x 4 times) per week </span>
-            </p>
-            <p className="mb-2">
-              Dining Out:{" "}
-              <span className="text-red-600">
-                $100 ($25 x 1 times) per week
-              </span>
-            </p>
-            <p className="mb-2">
-              Going Out with Friends:{" "}
-              <span className="text-red-600">$60 ($15 x 1 times) per week</span>
-            </p>
-            <p className="mb-2">
-              Bus Fare:{" "}
-              <span className="text-red-600">$100 ($5 x 5 times) per week</span>
-            </p>
-            <p className="mb-2">
-              Phone Bill: <span className="text-red-600">$30</span>
-            </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="text-center">
+              <p>Total Income:</p>
+              <p className="text-green-500">$400</p>
+            </div>
+            <div className="text-center">
+              <p>Price of Guitar Kate Wants:</p>
+              <p className="text-yellow-400">$150</p>
+            </div>
           </div>
-          <p className="font-bold">Summary:</p>
-          <p className="mb-2">
-            Total Expense: 96+100+60+100+30 ={""}
-            <span className="text-red-600">$386</span>
-          </p>
-          <p className="mb-2 text-yellow-400">
-            Monthly savings: <span className="text-green-600">400</span> -{" "}
-            <span className="text-red-600">386</span> = $14
-          </p>
+          <div className="text-center mt-6">
+            <p className="font-bold">Current Monthly Expenses:</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p>Starbucks Drinks:</p>
+                <p className="text-red-600">$96 ($6 x 4 times) per week</p>
+              </div>
+              <div>
+                <p>Dining Out:</p>
+                <p className="text-red-600">$100 ($25 x 1 times) per week</p>
+              </div>
+              <div>
+                <p>Going Out with Friends:</p>
+                <p className="text-red-600">$60 ($15 x 1 times) per week</p>
+              </div>
+              <div>
+                <p>Bus Fare:</p>
+                <p className="text-red-600">$100 ($5 x 5 times) per week</p>
+              </div>
+              <div>
+                <p>Phone Bill:</p>
+                <p className="text-red-600">$30</p>
+              </div>
+            </div>
+          </div>
+          <p className="font-bold mt-6">Summary:</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <p>Total Expense:</p>
+              <p className="text-red-600">$386</p>
+            </div>
+            <div>
+              <p>Monthly savings:</p>
+              <p className="text-green-600">$14</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-8">
+      <div className="container mx-auto mt-6">
         <div className="bg-gray-100 p-8 rounded-md">
           <h2 className="text-3xl font-bold text-center mb-4">
             Manage Your Expenses
           </h2>
-          <p className="text-center mb-4">
+          <p className="text-center mb-6">
             Help Kate decide how much she can spend on various activities{" "}
             <span className="font-bold">per week.</span>
           </p>
@@ -192,24 +191,41 @@ const Activity3 = ({ onPrevious }) => {
                 />
               </div>
             </div>
-            <div className="container mx-auto bg-black text-white w-1/3 rounded-lg">
-              <div className=" px-4 py-8">
+            <div className="container mx-auto bg-gray-800 text-white w-1/3 rounded-lg">
+              <div className="px-4 py-8">
                 <h2 className="text-3xl font-bold text-center mb-4">
                   Live Monthly Expenses
                 </h2>
-                <p className="text-center">Starbucks Drinks: ${totalDrinks}</p>
-                <p className="text-center">Dining Out: ${totalEatOut}</p>
-                <p className="text-center">
-                  Going Out with Friends: ${totalFriends}
-                </p>
-                <p className="text-center">Bus Fare: ${totalBus}</p>
-                <p className="text-center">Phone Bill: ${PHONE_BILL}</p>
-                <p className="text-center text-red-600">
-                  Total Expenses: ${totalExpenses}
-                </p>
-                <p className="text-center text-yellow-400">
-                  Savings: ${400 - totalExpenses}
-                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p>Starbucks Drinks:</p>
+                    <p className="text-center">${totalDrinks}</p>
+                  </div>
+                  <div>
+                    <p>Dining Out:</p>
+                    <p className="text-center">${totalEatOut}</p>
+                  </div>
+                  <div>
+                    <p>Going Out with Friends:</p>
+                    <p className="text-center">${totalFriends}</p>
+                  </div>
+                  <div>
+                    <p>Bus Fare:</p>
+                    <p className="text-center">${totalBus}</p>
+                  </div>
+                  <div>
+                    <p>Phone Bill:</p>
+                    <p className="text-center">${PHONE_BILL}</p>
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <p className="text-red-600">
+                    Total Expenses: ${totalExpenses}
+                  </p>
+                  <p className="text-yellow-400">
+                    Savings: ${400 - totalExpenses}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

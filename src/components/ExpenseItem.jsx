@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { GiPayMoney, GiReceiveMoney } from "react-icons/gi";
 
 const ExpenseItem = ({ title, onSelectAnswer, correctAnswer }) => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -22,9 +23,9 @@ const ExpenseItem = ({ title, onSelectAnswer, correctAnswer }) => {
 
   return (
     <div className={`shadow-md rounded-md p-4 mb-4 w-96 ${backgroundColor}`}>
-      <p>{title}</p>
-      <div className="flex justify-around mt-2">
-        <span>
+      <p className="text-lg font-semibold">{title}</p>
+      <div className="flex justify-evenly mt-2">
+        <label className="flex jutsify-center items-center gap-1">
           <input
             type="radio"
             name={title}
@@ -34,8 +35,10 @@ const ExpenseItem = ({ title, onSelectAnswer, correctAnswer }) => {
             onChange={handleOptionChange}
           />{" "}
           Income
-        </span>
-        <span>
+          <GiReceiveMoney size={30} />
+        </label>
+
+        <label className="flex jutsify-center items-center gap-1">
           <input
             type="radio"
             name={title}
@@ -45,7 +48,8 @@ const ExpenseItem = ({ title, onSelectAnswer, correctAnswer }) => {
             onChange={handleOptionChange}
           />{" "}
           Expense
-        </span>
+          <GiPayMoney size={30} />
+        </label>
       </div>
     </div>
   );
